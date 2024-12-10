@@ -2,6 +2,8 @@
 *.txt
 *.pdf
 *.a
+obj/
+push_swap
 # *.md
 
 # Prerequisites
