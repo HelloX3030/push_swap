@@ -1,0 +1,11 @@
+{
+	"files.associations": {
+		"push_swap.h": "c",
+		"ft_printf.h": "c",
+		"__hash_table": "c",
+		"array": "c",
+		"memory": "c",
+		"string_view": "c",
+		"unordered_map": "c"
+	}
+}

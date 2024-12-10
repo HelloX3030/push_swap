@@ -9,7 +9,7 @@ H_FILES := include/push_swap.h
 # .c files
 SRC_DIR := src
 vpath %.c $(SRC_DIR)
-SRC_FILES := main.c
+SRC_FILES := ft_add_stack_value.c ft_check_args.c ft_free_push_swap.c ft_get_stack_index.c ft_get_stack_value.c ft_init_push_swap.c ft_init_stack.c ft_print_push_swap.c ft_print_stack.c ft_push.c ft_remove_stack_value.c ft_set_random_stack_values.c ft_swap.c main.c
 
 # .o files 
 OBJ_DIR := obj
