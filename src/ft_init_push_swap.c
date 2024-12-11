@@ -6,7 +6,7 @@
 /*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 13:11:25 by lseeger           #+#    #+#             */
-/*   Updated: 2024/12/10 15:44:08 by lseeger          ###   ########.fr       */
+/*   Updated: 2024/12/11 13:24:53 by lseeger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,26 @@
 
 int	ft_init_push_swap(t_push_swap *ps, int argc, char **argv)
 {
-	// init max_size for testing purposes
-	// ps->max_size = argc - 1;
-	(void)argc;
-	if (!ft_init_stack(&ps->stack_a, 10))
-		return (0);
-	if (!ft_init_stack(&ps->stack_b, 10))
+	t_list	*tmp;
+	int		*new_content;
+
+	ps->a = NULL;
+	ps->b = NULL;
+	ps->size_a = argc - 1;
+	argv++;
+	ps->size_b = 0;
+	while (--argc)
 	{
-		free(ps->stack_a.values);
-		return (0);
+		new_content = malloc(sizeof(int));
+		*new_content = ft_atoi(*argv);
+		argv++;
+		tmp = ft_lstnew(new_content);
+		if (!tmp)
+			return (ft_lstclear(&ps->a, ft_free_content), 0);
+		if (!ps->a)
+			ps->a = tmp;
+		else
+			ft_lstadd_back(&ps->a, tmp);
 	}
-	// parse argv
-	(void)argv;
 	return (1);
 }

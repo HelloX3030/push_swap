@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_args.c                                    :+:      :+:    :+:   */
+/*   ft_free_content.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/10 13:16:54 by lseeger           #+#    #+#             */
-/*   Updated: 2024/12/10 13:57:35 by lseeger          ###   ########.fr       */
+/*   Created: 2024/12/11 13:11:32 by lseeger           #+#    #+#             */
+/*   Updated: 2024/12/11 13:13:28 by lseeger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_check_args(int argc, char **argv)
+void	ft_free_content(void *content)
 {
-	if (argc != 1)
-		return (0);
-	(void)argv;
-	return (1);
+	free(content);
 }
