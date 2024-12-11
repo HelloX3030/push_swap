@@ -6,7 +6,7 @@
 /*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:56:02 by lseeger           #+#    #+#             */
-/*   Updated: 2024/12/11 13:27:37 by lseeger          ###   ########.fr       */
+/*   Updated: 2024/12/11 13:40:28 by lseeger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int	main(int argc, char **argv)
 		write(2, "Error\n", 6);
 		return (1);
 	}
+	ft_print_push_swap(&ps);
+	ft_swap_a(&ps);
 	ft_print_push_swap(&ps);
 	ft_free_push_swap(&ps);
 	return (0);

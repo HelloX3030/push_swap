@@ -6,7 +6,7 @@
 /*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 13:11:25 by lseeger           #+#    #+#             */
-/*   Updated: 2024/12/11 13:24:53 by lseeger          ###   ########.fr       */
+/*   Updated: 2024/12/11 13:32:13 by lseeger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int	ft_init_push_swap(t_push_swap *ps, int argc, char **argv)
 	ps->a = NULL;
 	ps->b = NULL;
 	ps->size_a = argc - 1;
-	argv++;
 	ps->size_b = 0;
+	argv++;
 	while (--argc)
 	{
 		new_content = malloc(sizeof(int));
