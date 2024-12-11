@@ -6,7 +6,7 @@
 /*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:47:27 by lseeger           #+#    #+#             */
-/*   Updated: 2024/12/11 13:22:45 by lseeger          ###   ########.fr       */
+/*   Updated: 2024/12/11 14:34:37 by lseeger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void		ft_free_content(void *content);
 void		ft_print_stack(t_list *stack);
 int			ft_get_stack_value(t_list *stack, int i);
 void		ft_set_stack_value(t_list *stack, int i, int value);
+t_list		*ft_get_prev(t_list *stack, t_list *node);
 
 typedef struct s_push_swap
 {

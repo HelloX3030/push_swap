@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_get_prev.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/10 12:56:02 by lseeger           #+#    #+#             */
-/*   Updated: 2024/12/11 14:23:49 by lseeger          ###   ########.fr       */
+/*   Created: 2024/12/11 14:34:49 by lseeger           #+#    #+#             */
+/*   Updated: 2024/12/11 14:35:20 by lseeger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	check_leaks(void)
+t_list	*ft_get_prev(t_list *stack, t_list *node)
 {
-	system("leaks push_swap");
-}
+	t_list	*prev;
 
-int	main(int argc, char **argv)
-{
-	t_push_swap	ps;
-
-	atexit(check_leaks);
-	if (!ft_init_push_swap(&ps, argc, argv))
-	{
-		write(2, "Error\n", 6);
-		return (1);
-	}
-	ft_print_push_swap(&ps);
-	ft_reverse_rotate_a(&ps);
-	ft_print_push_swap(&ps);
-	ft_free_push_swap(&ps);
-	return (0);
+	prev = stack;
+	while (prev && prev->next != node)
+		prev = prev->next;
+	return (prev);
 }
