@@ -6,7 +6,7 @@
 /*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:47:27 by lseeger           #+#    #+#             */
-/*   Updated: 2024/12/11 14:34:37 by lseeger          ###   ########.fr       */
+/*   Updated: 2024/12/16 13:28:55 by lseeger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void		ft_print_stack(t_list *stack);
 int			ft_get_stack_value(t_list *stack, int i);
 void		ft_set_stack_value(t_list *stack, int i, int value);
 t_list		*ft_get_prev(t_list *stack, t_list *node);
+bool		ft_is_sorted(t_list *stack);
 
 typedef struct s_push_swap
 {
@@ -56,5 +57,12 @@ void		ft_rotate_rr(t_push_swap *ps);
 void		ft_reverse_rotate_a(t_push_swap *ps);
 void		ft_reverse_rotate_b(t_push_swap *ps);
 void		ft_reverse_rotate_rr(t_push_swap *ps);
+
+// sorting algorithms
+void		ft_bubble_sort(t_push_swap *ps);
+
+// main functions
+void		ft_sort(t_push_swap *ps);
+void		ft_debug_sort(t_push_swap *ps, bool check_leaks);
 
 #endif

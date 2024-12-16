@@ -4,6 +4,7 @@
 *.a
 obj/
 push_swap
+visualizer
 # *.md
 
 # Prerequisites

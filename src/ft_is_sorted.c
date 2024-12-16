@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_is_sorted.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/10 12:56:02 by lseeger           #+#    #+#             */
-/*   Updated: 2024/12/16 13:45:14 by lseeger          ###   ########.fr       */
+/*   Created: 2024/12/16 12:37:58 by lseeger           #+#    #+#             */
+/*   Updated: 2024/12/16 12:57:40 by lseeger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+bool	ft_is_sorted(t_list *stack)
 {
-	t_push_swap	ps;
-
-	if (!ft_init_push_swap(&ps, argc, argv))
+	if (!stack)
+		return (true);
+	while (stack->next)
 	{
-		write(2, "Error\n", 6);
-		return (1);
+		if (*(int *)stack->content > *(int *)stack->next->content)
+			return (false);
+		stack = stack->next;
 	}
-	// ft_debug_sort(&ps, false);
-	ft_sort(&ps);
-	ft_free_push_swap(&ps);
-	return (0);
+	return (true);
 }
