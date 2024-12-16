@@ -6,7 +6,7 @@
 /*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:47:27 by lseeger           #+#    #+#             */
-/*   Updated: 2024/12/16 13:28:55 by lseeger          ###   ########.fr       */
+/*   Updated: 2024/12/16 14:22:02 by lseeger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 // helper functions
 void		ft_free_content(void *content);
+void		ft_print_error(void);
 
 // stack functions
 void		ft_print_stack(t_list *stack);

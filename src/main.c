@@ -6,7 +6,7 @@
 /*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:56:02 by lseeger           #+#    #+#             */
-/*   Updated: 2024/12/16 13:45:14 by lseeger          ###   ########.fr       */
+/*   Updated: 2024/12/16 15:14:36 by lseeger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ int	main(int argc, char **argv)
 
 	if (!ft_init_push_swap(&ps, argc, argv))
 	{
-		write(2, "Error\n", 6);
+		ft_print_error();
 		return (1);
 	}
-	// ft_debug_sort(&ps, false);
-	ft_sort(&ps);
+	ft_debug_sort(&ps, false);
+	// ft_sort(&ps);
 	ft_free_push_swap(&ps);
 	return (0);
 }
