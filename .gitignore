@@ -5,6 +5,8 @@
 obj/
 push_swap
 visualizer
+*.ini
+/.vscode/
 # *.md
 
 # Prerequisites
