@@ -3,10 +3,13 @@
 *.pdf
 *.a
 obj/
-push_swap
+/push_swap
+!/push_swap/
 visualizer
 *.ini
-/.vscode/
+vscode/
+/checker
+!/checker/
 # *.md
 
 # Prerequisites

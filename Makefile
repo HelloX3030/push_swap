@@ -2,24 +2,29 @@ CC := cc
 CFLAGS := -Wall -Wextra -Werror # -Ofast
 DEBUG_FLAGS := -g -O0
 NAME := push_swap
+BONUS_NAME := checker
 
-# .h files 
-H_FILES := include/push_swap.h
+# .h files
+H_FILES := $(wildcard include/*.h)
 
 # .c files
-SRC_DIR := src
+SRC_DIR := src/base src/checker src/push_swap
 vpath %.c $(SRC_DIR)
-SRC_FILES := ft_bubble_sort.c ft_debug_sort.c ft_free_content.c ft_free_push_swap.c ft_get_prev.c ft_get_stack_value.c ft_init_push_swap.c ft_is_sorted.c ft_print_error.c ft_print_push_swap.c ft_print_stack.c ft_push.c ft_reverse_rotate.c ft_rotate.c ft_set_stack_value.c ft_sort.c main.c swap.c
+BASE_SRC_FILES := ft_free_content.c ft_free_push_swap.c ft_get_prev.c ft_get_stack_value.c ft_init_push_swap.c ft_is_sorted.c ft_print_error.c ft_print_push_swap.c ft_print_stack.c ft_push.c ft_reverse_rotate.c ft_rotate.c ft_set_stack_value.c swap.c
+PUSH_SWAP_SRC_FILES := ft_bubble_sort.c ft_debug_sort.c ft_sort.c push_swap_main.c
+CHECKER_SRC_FILES := checker_main.c
 
-# .o files 
+# .o files
 OBJ_DIR := obj
-OBJ_FILES := $(addprefix $(OBJ_DIR)/, $(SRC_FILES:.c=.o))
+BASE_OBJ_FILES := $(addprefix $(OBJ_DIR)/, $(BASE_SRC_FILES:.c=.o))
+PUSH_SWAP_OBJ_FILES := $(addprefix $(OBJ_DIR)/, $(PUSH_SWAP_SRC_FILES:.c=.o))
+CHECKER_OBJ_FILES := $(addprefix $(OBJ_DIR)/, $(CHECKER_SRC_FILES:.c=.o))
 
-# libft 
+# libft
 LIBFT_DIR := libft
 LIBFT := $(LIBFT_DIR)/libft.a
 
-# includes 
+# includes
 INCLUDES := -I include -I libft
 LIBS := $(LIBFT)
 LDFLAGS := -L$(LIBFT_DIR)
@@ -28,12 +33,19 @@ LDLIBS := -lft
 # all
 all: $(NAME)
 
-# Regular Objs
-$(NAME): $(OBJ_FILES) $(LIBS)
-	$(CC) $(OBJ_FILES) $(LDFLAGS) $(LDLIBS) -o $(NAME)
+# bonus
+bonus: $(BONUS_NAME)
 
-# Compile OBJ_FILES
-$(OBJ_DIR)/%.o: %.c $(H_FILES) | $(OBJ_DIR)
+# Link push_swap
+$(NAME): $(LIBS) $(BASE_OBJ_FILES) $(PUSH_SWAP_OBJ_FILES)
+	$(CC) $(BASE_OBJ_FILES) $(PUSH_SWAP_OBJ_FILES) $(LDFLAGS) $(LDLIBS) -o $(NAME)
+
+# Link checker
+$(BONUS_NAME): $(LIBS) $(BASE_OBJ_FILES) $(CHECKER_OBJ_FILES)
+	$(CC) $(BASE_OBJ_FILES) $(CHECKER_OBJ_FILES) $(LDFLAGS) $(LDLIBS) -o $(BONUS_NAME)
+
+# Compile BASE_OBJ_FILES
+$(OBJ_DIR)/%.o: %.c $(H_FILES) $(LIBFT) | $(OBJ_DIR)
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 $(OBJ_DIR):
@@ -42,7 +54,7 @@ $(OBJ_DIR):
 $(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR)
 
-# clean 
+# clean
 clean:
 	$(RM) -r $(OBJ_DIR)
 	$(MAKE) -C $(LIBFT_DIR) clean
@@ -50,7 +62,7 @@ clean:
 # fclean
 fclean:
 	$(RM) -rf $(OBJ_DIR)
-	$(RM) -f $(NAME)
+	$(RM) -f $(NAME) $(BONUS_NAME)
 	$(MAKE) -C $(LIBFT_DIR) fclean
 
 # re
@@ -58,6 +70,6 @@ re: fclean all
 
 # debug
 debug: CFLAGS += $(DEBUG_FLAGS)
-debug: re
+debug: re bonus
 
-.PHONY: all clean fclean re debug
+.PHONY: all clean fclean re debug bonus
