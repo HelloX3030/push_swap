@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_main.c                                     :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/17 13:49:59 by lseeger           #+#    #+#             */
-/*   Updated: 2024/12/17 15:11:17 by lseeger          ###   ########.fr       */
+/*   Created: 2024/12/17 14:41:10 by lseeger           #+#    #+#             */
+/*   Updated: 2024/12/17 14:44:40 by lseeger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	t_push_swap	ps;
-
-	if (!ft_init_push_swap(&ps, argc, argv))
+	while (*s1 && (*s1 == *s2))
 	{
-		ft_print_error();
-		return (1);
+		s1++;
+		s2++;
 	}
-	if (!ft_read_instructions(&ps))
-	{
-		ft_print_error();
-		ft_free_push_swap(&ps);
-		return (1);
-	}
-	if (ft_is_sorted(ps.a) && ps.size_b == 0)
-		ft_printf("OK\n");
-	else
-		ft_printf("KO\n");
-	ft_free_push_swap(&ps);
-	return (0);
+	return ((unsigned char)*s1 - (unsigned char)*s2);
 }

@@ -6,7 +6,7 @@
 /*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 11:25:04 by lseeger           #+#    #+#             */
-/*   Updated: 2024/12/03 15:10:50 by lseeger          ###   ########.fr       */
+/*   Updated: 2024/12/17 14:40:55 by lseeger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,6 @@ int					ft_abs(int n);
 int					ft_max(int a, int b);
 int					ft_abs_max(int a, int b);
 void				ft_remove_c(char *str, char *set);
+int					ft_strcmp(const char *s1, const char *s2);
 
 #endif
