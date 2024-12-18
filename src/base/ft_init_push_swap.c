@@ -6,7 +6,7 @@
 /*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 13:11:25 by lseeger           #+#    #+#             */
-/*   Updated: 2024/12/16 15:14:09 by lseeger          ###   ########.fr       */
+/*   Updated: 2024/12/18 14:34:51 by lseeger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 static int	parse_str(t_push_swap *ps, char *str)
 {
-	t_list	*tmp;
-	int		*new_content;
+	t_list		*tmp;
+	t_content	*new_content;
 
 	if (!ft_aisi(str))
 		return (0);
-	new_content = malloc(sizeof(int));
+	new_content = malloc(sizeof(t_content));
 	if (!new_content)
 		return (0);
-	*new_content = ft_atoi(str);
+	new_content->value = ft_atoi(str);
 	tmp = ft_lstnew(new_content);
 	if (!tmp)
 		return (ft_free_content(new_content), 0);
@@ -70,5 +70,6 @@ int	ft_init_push_swap(t_push_swap *ps, int argc, char **argv)
 			return (ft_lstclear(&ps->a, ft_free_content), 0);
 		i++;
 	}
+	ft_init_lst_indexes(ps->a);
 	return (1);
 }

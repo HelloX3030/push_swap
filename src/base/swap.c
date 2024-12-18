@@ -6,7 +6,7 @@
 /*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 13:30:46 by lseeger           #+#    #+#             */
-/*   Updated: 2024/12/11 13:41:34 by lseeger          ###   ########.fr       */
+/*   Updated: 2024/12/18 14:39:49 by lseeger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,17 @@
 
 static void	ft_swap(t_list *stack)
 {
-	int	tmp;
+	t_list		*node_1;
+	t_list		*node_2;
+	t_content	*tmp;
 
 	if (ft_lstsize(stack) < 2)
 		return ;
-	tmp = ft_get_stack_value(stack, 0);
-	ft_set_stack_value(stack, 0, ft_get_stack_value(stack, 1));
-	ft_set_stack_value(stack, 1, tmp);
+	node_1 = stack;
+	node_2 = stack->next;
+	tmp = node_1->content;
+	node_1->content = node_2->content;
+	node_2->content = tmp;
 }
 
 void	ft_swap_a(t_push_swap *ps)

@@ -6,7 +6,7 @@
 /*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:47:27 by lseeger           #+#    #+#             */
-/*   Updated: 2024/12/18 13:08:46 by lseeger          ###   ########.fr       */
+/*   Updated: 2024/12/18 14:40:37 by lseeger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,15 @@ void		ft_print_error(void);
 
 // stack functions
 void		ft_print_stack(t_list *stack);
-int			ft_get_stack_value(t_list *stack, int i);
-void		ft_set_stack_value(t_list *stack, int i, int value);
 t_list		*ft_get_prev(t_list *stack, t_list *node);
 bool		ft_is_sorted(t_list *stack);
+void		ft_init_lst_indexes(t_list *stack);
+
+typedef struct s_content
+{
+	int		value;
+	int		index;
+}			t_content;
 
 typedef struct s_push_swap
 {

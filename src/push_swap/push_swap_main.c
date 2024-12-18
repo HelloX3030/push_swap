@@ -6,7 +6,7 @@
 /*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:56:02 by lseeger           #+#    #+#             */
-/*   Updated: 2024/12/17 14:22:33 by lseeger          ###   ########.fr       */
+/*   Updated: 2024/12/18 13:56:40 by lseeger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int	main(int argc, char **argv)
 		ft_print_error();
 		return (1);
 	}
-	// ft_debug_sort(&ps, false);
-	ft_sort(&ps);
+	ft_debug_sort(&ps, true);
+	// ft_sort(&ps);
 	ft_free_push_swap(&ps);
 	return (0);
 }

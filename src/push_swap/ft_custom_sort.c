@@ -6,7 +6,7 @@
 /*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 13:04:45 by lseeger           #+#    #+#             */
-/*   Updated: 2024/12/18 13:22:05 by lseeger          ###   ########.fr       */
+/*   Updated: 2024/12/18 13:49:58 by lseeger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,21 @@
 
 static int	get_min_index(t_list *stack)
 {
-	int	min;
-	int	min_index;
-	int	index;
+	int			min_index;
+	int			index;
+	t_content	*temp;
+	int			min;
 
-	min = *(int *)stack->content;
+	temp = (t_content *)stack->content;
+	min = temp->value;
 	min_index = 0;
 	index = 0;
 	while (stack)
 	{
-		if (*(int *)stack->content < min)
+		temp = (t_content *)stack->content;
+		if (temp->value < min)
 		{
-			min = *(int *)stack->content;
+			min = temp->value;
 			min_index = index;
 		}
 		stack = stack->next;
