@@ -6,7 +6,7 @@
 /*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:47:27 by lseeger           #+#    #+#             */
-/*   Updated: 2024/12/18 14:41:36 by lseeger          ###   ########.fr       */
+/*   Updated: 2024/12/18 15:38:51 by lseeger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void		ft_reverse_rotate_rr(t_push_swap *ps);
 
 // sorting algorithms
 void		ft_bubble_sort(t_push_swap *ps);
-void		ft_custom_sort(t_push_swap *ps);
+void		ft_sort_in_b(t_push_swap *ps);
 
 // main functions
 void		ft_sort(t_push_swap *ps);

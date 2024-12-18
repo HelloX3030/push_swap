@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_custom_sort.c                                   :+:      :+:    :+:   */
+/*   ft_sort_in_b.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 13:04:45 by lseeger           #+#    #+#             */
-/*   Updated: 2024/12/18 13:49:58 by lseeger          ###   ########.fr       */
+/*   Updated: 2024/12/18 15:38:35 by lseeger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ static void	push_back(t_push_swap *ps)
 		ft_push_a(ps);
 }
 
-void	ft_custom_sort(t_push_swap *ps)
+void	ft_sort_in_b(t_push_swap *ps)
 {
 	while (ps->size_a > 3)
 	{

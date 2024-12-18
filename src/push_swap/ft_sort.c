@@ -6,7 +6,7 @@
 /*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 12:34:36 by lseeger           #+#    #+#             */
-/*   Updated: 2024/12/18 13:53:37 by lseeger          ###   ########.fr       */
+/*   Updated: 2024/12/18 15:39:05 by lseeger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_sort(t_push_swap *ps)
 {
-	ft_custom_sort(ps);
+	ft_sort_in_b(ps);
 }
 
 // ft_bubble_sort(ps);
