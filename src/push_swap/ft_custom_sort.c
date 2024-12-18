@@ -6,26 +6,55 @@
 /*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 13:04:45 by lseeger           #+#    #+#             */
-/*   Updated: 2024/12/18 13:08:31 by lseeger          ###   ########.fr       */
+/*   Updated: 2024/12/18 13:22:05 by lseeger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	get_min(t_list *stack)
+static int	get_min_index(t_list *stack)
 {
 	int	min;
-	int	value;
+	int	min_index;
+	int	index;
 
 	min = *(int *)stack->content;
+	min_index = 0;
+	index = 0;
 	while (stack)
 	{
-		value = *(int *)stack->content;
-		if (value < min)
-			min = value;
+		if (*(int *)stack->content < min)
+		{
+			min = *(int *)stack->content;
+			min_index = index;
+		}
 		stack = stack->next;
+		index++;
 	}
-	return (min);
+	return (min_index);
+}
+
+static void	go_to_min(t_push_swap *ps)
+{
+	int	min_index;
+
+	min_index = get_min_index(ps->a);
+	if (min_index < ps->size_a / 2)
+	{
+		while (min_index > 0)
+		{
+			ft_rotate_a(ps);
+			min_index--;
+		}
+	}
+	else
+	{
+		while (min_index < ps->size_a)
+		{
+			ft_reverse_rotate_a(ps);
+			min_index++;
+		}
+	}
 }
 
 static void	push_back(t_push_swap *ps)
@@ -36,18 +65,9 @@ static void	push_back(t_push_swap *ps)
 
 void	ft_custom_sort(t_push_swap *ps)
 {
-	int	min;
-
 	while (ps->size_a > 3)
 	{
-		min = get_min(ps->a);
-		while (*(int *)ps->a->content != min)
-		{
-			if (*(int *)ps->a->content < min)
-				ft_rotate_a(ps);
-			else
-				ft_reverse_rotate_a(ps);
-		}
+		go_to_min(ps);
 		ft_push_b(ps);
 	}
 	ft_bubble_sort(ps);
