@@ -6,7 +6,7 @@
 /*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:47:27 by lseeger           #+#    #+#             */
-/*   Updated: 2024/12/18 15:38:51 by lseeger          ###   ########.fr       */
+/*   Updated: 2024/12/19 15:09:56 by lseeger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,13 @@
 # include "../libft/libft/libft.h"
 # include "../libft/printf/include/ft_printf.h"
 
+# define PRINT_COMMANDS 0
+
 // helper functions
 void		ft_free_content(void *content);
 void		ft_print_error(void);
+int			ft_get_next_index(int i, int size);
+int			ft_get_relative_index(int i, int i_start, int size);
 
 // stack functions
 void		ft_print_stack(t_list *stack);
@@ -27,6 +31,9 @@ t_list		*ft_get_prev(t_list *stack, t_list *node);
 bool		ft_is_sorted(t_list *stack);
 void		ft_init_lst_indexes(t_list *stack);
 int			ft_value_present(t_list *stack, int value);
+int			ft_get_total_diff(t_list *stack, int start_i, int size);
+int			ft_get_min_diff_index(t_list *stack, int size);
+int			ft_get_diff(int index, int i, int start_i, int size);
 
 typedef struct s_content
 {
@@ -68,6 +75,7 @@ void		ft_reverse_rotate_rr(t_push_swap *ps);
 // sorting algorithms
 void		ft_bubble_sort(t_push_swap *ps);
 void		ft_sort_in_b(t_push_swap *ps);
+void		ft_custom_sort(t_push_swap *ps);
 
 // main functions
 void		ft_sort(t_push_swap *ps);

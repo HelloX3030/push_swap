@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort.c                                          :+:      :+:    :+:   */
+/*   ft_get_next_index.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/16 12:34:36 by lseeger           #+#    #+#             */
-/*   Updated: 2024/12/19 13:16:51 by lseeger          ###   ########.fr       */
+/*   Created: 2024/12/19 14:26:38 by lseeger           #+#    #+#             */
+/*   Updated: 2024/12/19 14:28:40 by lseeger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_sort(t_push_swap *ps)
+int	ft_get_next_index(int i, int size)
 {
-	ft_custom_sort(ps);
+	i++;
+	if (i >= size)
+		i = 0;
+	return (i);
 }

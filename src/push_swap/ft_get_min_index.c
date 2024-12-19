@@ -1,18 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort.c                                          :+:      :+:    :+:   */
+/*   ft_get_min_index.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/16 12:34:36 by lseeger           #+#    #+#             */
-/*   Updated: 2024/12/19 13:16:51 by lseeger          ###   ########.fr       */
+/*   Created: 2024/12/19 14:30:06 by lseeger           #+#    #+#             */
+/*   Updated: 2024/12/19 14:46:56 by lseeger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_sort(t_push_swap *ps)
+int	ft_get_min_diff_index(t_list *stack, int size)
 {
-	ft_custom_sort(ps);
+	int	min_diff;
+	int	min_i;
+	int	start_i;
+
+	min_diff = ft_get_total_diff(stack, 0, size);
+	min_i = 0;
+	start_i = 0;
+	while (start_i < size)
+	{
+		if (ft_get_total_diff(stack, start_i, size) < min_diff)
+		{
+			min_diff = ft_get_total_diff(stack, start_i, size);
+			min_i = start_i;
+		}
+		start_i++;
+	}
+	return (min_i);
 }

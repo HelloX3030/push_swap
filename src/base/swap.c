@@ -6,7 +6,7 @@
 /*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 13:30:46 by lseeger           #+#    #+#             */
-/*   Updated: 2024/12/18 14:39:49 by lseeger          ###   ########.fr       */
+/*   Updated: 2024/12/19 15:02:55 by lseeger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,21 @@ static void	ft_swap(t_list *stack)
 void	ft_swap_a(t_push_swap *ps)
 {
 	ft_swap(ps->a);
-	write(1, "sa\n", 3);
+	if (PRINT_COMMANDS)
+		write(1, "sa\n", 3);
 }
 
 void	ft_swap_b(t_push_swap *ps)
 {
 	ft_swap(ps->b);
-	write(1, "sb\n", 3);
+	if (PRINT_COMMANDS)
+		write(1, "sb\n", 3);
 }
 
 void	ft_swap_ss(t_push_swap *ps)
 {
 	ft_swap(ps->a);
 	ft_swap(ps->b);
-	write(1, "ss\n", 3);
+	if (PRINT_COMMANDS)
+		write(1, "ss\n", 3);
 }

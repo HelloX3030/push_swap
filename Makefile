@@ -10,8 +10,8 @@ H_FILES := $(wildcard include/*.h)
 # .c files
 SRC_DIR := src/base src/checker src/push_swap
 vpath %.c $(SRC_DIR)
-BASE_SRC_FILES := ft_free_content.c ft_free_push_swap.c ft_get_prev.c ft_init_lst_indexes.c ft_init_push_swap.c ft_is_sorted.c ft_print_error.c ft_print_push_swap.c ft_print_stack.c ft_push.c ft_reverse_rotate.c ft_rotate.c ft_value_present.c swap.c
-PUSH_SWAP_SRC_FILES := ft_bubble_sort.c ft_debug_sort.c ft_sort.c ft_sort_in_b.c push_swap_main.c
+BASE_SRC_FILES := ft_free_content.c ft_free_push_swap.c ft_get_next_index.c ft_get_prev.c ft_get_relative_index.c ft_init_lst_indexes.c ft_init_push_swap.c ft_is_sorted.c ft_print_error.c ft_print_push_swap.c ft_print_stack.c ft_push.c ft_reverse_rotate.c ft_rotate.c ft_value_present.c swap.c
+PUSH_SWAP_SRC_FILES := ft_bubble_sort.c ft_custom_sort.c ft_debug_sort.c ft_get_diff.c ft_get_min_index.c ft_get_total_diff.c ft_sort.c ft_sort_in_b.c push_swap_main.c
 CHECKER_SRC_FILES := checker_main.c ft_read_instructions.c
 
 # .o files

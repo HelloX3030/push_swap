@@ -6,7 +6,7 @@
 /*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 13:44:21 by lseeger           #+#    #+#             */
-/*   Updated: 2024/12/11 13:53:16 by lseeger          ###   ########.fr       */
+/*   Updated: 2024/12/19 15:04:24 by lseeger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ void	ft_push_a(t_push_swap *ps)
 		ps->size_a++;
 		ps->size_b--;
 	}
-	write(1, "pa\n", 3);
+	if (PRINT_COMMANDS)
+		write(1, "pa\n", 3);
 }
 
 void	ft_push_b(t_push_swap *ps)
@@ -48,5 +49,6 @@ void	ft_push_b(t_push_swap *ps)
 		ps->size_a--;
 		ps->size_b++;
 	}
-	write(1, "pb\n", 3);
+	if (PRINT_COMMANDS)
+		write(1, "pb\n", 3);
 }

@@ -6,7 +6,7 @@
 /*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 13:59:32 by lseeger           #+#    #+#             */
-/*   Updated: 2024/12/11 14:36:14 by lseeger          ###   ########.fr       */
+/*   Updated: 2024/12/19 15:03:42 by lseeger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,21 @@ static void	ft_reverse_rotate(t_list **stack)
 void	ft_reverse_rotate_a(t_push_swap *ps)
 {
 	ft_reverse_rotate(&ps->a);
-	write(1, "rra\n", 4);
+	if (PRINT_COMMANDS)
+		write(1, "rra\n", 4);
 }
 
 void	ft_reverse_rotate_b(t_push_swap *ps)
 {
 	ft_reverse_rotate(&ps->b);
-	write(1, "rrb\n", 4);
+	if (PRINT_COMMANDS)
+		write(1, "rrb\n", 4);
 }
 
 void	ft_reverse_rotate_rr(t_push_swap *ps)
 {
 	ft_reverse_rotate(&ps->a);
 	ft_reverse_rotate(&ps->b);
-	write(1, "rrr\n", 4);
+	if (PRINT_COMMANDS)
+		write(1, "rrr\n", 4);
 }
