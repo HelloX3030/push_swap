@@ -6,7 +6,7 @@
 /*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:47:27 by lseeger           #+#    #+#             */
-/*   Updated: 2024/12/19 15:09:56 by lseeger          ###   ########.fr       */
+/*   Updated: 2024/12/19 15:56:21 by lseeger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include "../libft/libft/libft.h"
 # include "../libft/printf/include/ft_printf.h"
 
-# define PRINT_COMMANDS 0
+# define PRINT_COMMANDS 1
 
 // helper functions
 void		ft_free_content(void *content);
