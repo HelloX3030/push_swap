@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	ft_sort(t_push_swap *ps)
+void ft_sort(t_push_swap *ps)
 {
-	ft_custom_sort(ps);
+	ft_stalin_sort(ps);
 }

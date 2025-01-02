@@ -11,6 +11,7 @@ vscode/
 /checker
 !/checker/
 # *.md
+/push_swap_visualizer
 
 # Prerequisites
 *.d
