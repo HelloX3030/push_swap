@@ -35,6 +35,8 @@ int ft_get_total_diff(t_list *stack, int start_i, int size);
 int ft_get_min_diff_index(t_list *stack, int size);
 int ft_get_diff(int index, int i, int start_i, int size);
 int ft_get_min_index(t_list *stack);
+int ft_get_max_index(t_list *stack);
+int ft_get_index_distance(int size, int index);
 
 typedef struct s_content
 {
@@ -57,6 +59,7 @@ void ft_print_push_swap(t_push_swap *ps);
 // stack operations
 void ft_go_to_index(t_push_swap *ps, int index);
 void ft_push_back(t_push_swap *ps);
+void ft_move_to_start(t_push_swap *ps);
 
 // swap
 void ft_swap_a(t_push_swap *ps);
