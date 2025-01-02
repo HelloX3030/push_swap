@@ -12,10 +12,10 @@
 
 #include "../include/ft_printf.h"
 
-int static	ft_print_long_hex_helper(uintptr_t n)
+static int ft_print_long_hex_helper(uintptr_t n)
 {
-	int		len;
-	ssize_t	result;
+	int len;
+	ssize_t result;
 
 	len = 0;
 	if (n < 16)
@@ -38,9 +38,9 @@ int static	ft_print_long_hex_helper(uintptr_t n)
 	}
 }
 
-static int	ft_print_long_hex(uintptr_t n)
+static int ft_print_long_hex(uintptr_t n)
 {
-	ssize_t	result;
+	ssize_t result;
 
 	result = write(1, "0x", 2);
 	if (result < 0)
@@ -48,9 +48,9 @@ static int	ft_print_long_hex(uintptr_t n)
 	return (ft_print_long_hex_helper(n) + result);
 }
 
-int	ft_print_p(va_list args)
+int ft_print_p(va_list args)
 {
-	void	*ptr;
+	void *ptr;
 
 	ptr = va_arg(args, void *);
 	return (ft_print_long_hex((uintptr_t)ptr));

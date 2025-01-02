@@ -13,18 +13,19 @@
 #include "../libft/libft.h"
 #include "get_next_line.h"
 
-char	*get_buffer(int fd)
+char *get_buffer(int fd)
 {
-	static char	buffer[OPEN_MAX][BUFFER_SIZE + 1];
+	static char buffer[1024][BUFFER_SIZE + 1];
 
+	// use upen max (OPEN_MAX)
 	return (buffer[fd]);
 }
 
-char	*handle_found_nl(char *buffer, char *next_nl, char *nl)
+char *handle_found_nl(char *buffer, char *next_nl, char *nl)
 {
-	const ptrdiff_t	found_len = next_nl - buffer + 1;
-	const size_t	nl_len = ft_strlen(nl);
-	char			*new_nl;
+	const ptrdiff_t found_len = next_nl - buffer + 1;
+	const size_t nl_len = ft_strlen(nl);
+	char *new_nl;
 
 	new_nl = malloc(nl_len + found_len + 1);
 	if (!new_nl)
@@ -37,9 +38,9 @@ char	*handle_found_nl(char *buffer, char *next_nl, char *nl)
 	return (new_nl);
 }
 
-bool	handle_start_buffer(char *buffer, char **nl, size_t *nl_r_len)
+bool handle_start_buffer(char *buffer, char **nl, size_t *nl_r_len)
 {
-	char	*next_nl;
+	char *next_nl;
 
 	if (!*buffer)
 		return (0);
@@ -57,10 +58,10 @@ bool	handle_start_buffer(char *buffer, char **nl, size_t *nl_r_len)
 	}
 }
 
-bool	read_buffer(int fd, char *buffer, char **nl, size_t *nl_r_len)
+bool read_buffer(int fd, char *buffer, char **nl, size_t *nl_r_len)
 {
-	char	*new_str;
-	ssize_t	bytes_read;
+	char *new_str;
+	ssize_t bytes_read;
 
 	bytes_read = read(fd, buffer, BUFFER_SIZE);
 	if (bytes_read == -1)
@@ -81,12 +82,12 @@ bool	read_buffer(int fd, char *buffer, char **nl, size_t *nl_r_len)
 	return (0);
 }
 
-char	*get_next_line(int fd)
+char *get_next_line(int fd)
 {
-	char	*buffer;
-	char	*next_nl;
-	char	*nl;
-	size_t	nl_r_len;
+	char *buffer;
+	char *next_nl;
+	char *nl;
+	size_t nl_r_len;
 
 	if (fd < 0 || BUFFER_SIZE < 1)
 		return (NULL);
