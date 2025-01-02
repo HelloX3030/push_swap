@@ -34,6 +34,7 @@ int ft_value_present(t_list *stack, int value);
 int ft_get_total_diff(t_list *stack, int start_i, int size);
 int ft_get_min_diff_index(t_list *stack, int size);
 int ft_get_diff(int index, int i, int start_i, int size);
+int ft_get_min_index(t_list *stack);
 
 typedef struct s_content
 {
@@ -52,6 +53,10 @@ typedef struct s_push_swap
 int ft_init_push_swap(t_push_swap *ps, int argc, char **argv);
 void ft_free_push_swap(t_push_swap *ps);
 void ft_print_push_swap(t_push_swap *ps);
+
+// stack operations
+void ft_go_to_index(t_push_swap *ps, int index);
+void ft_push_back(t_push_swap *ps);
 
 // swap
 void ft_swap_a(t_push_swap *ps);
@@ -75,6 +80,7 @@ void ft_reverse_rotate_rr(t_push_swap *ps);
 // sorting algorithms
 void ft_bubble_sort(t_push_swap *ps);
 void ft_sort_in_b(t_push_swap *ps);
+void ft_improved_sort_in_b(t_push_swap *ps);
 void ft_custom_sort(t_push_swap *ps);
 void ft_stalin_sort(t_push_swap *ps);
 
