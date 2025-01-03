@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int ft_get_min_index(t_list *stack)
+int ft_get_min_stack_index(t_list *stack)
 {
 	int min_index;
 	int index;

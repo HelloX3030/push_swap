@@ -34,8 +34,10 @@ int ft_value_present(t_list *stack, int value);
 int ft_get_total_diff(t_list *stack, int start_i, int size);
 int ft_get_min_diff_index(t_list *stack, int size);
 int ft_get_diff(int index, int i, int start_i, int size);
-int ft_get_min_index(t_list *stack);
-int ft_get_max_index(t_list *stack);
+int ft_get_below_index(t_list *stack, int value);
+int ft_get_above_index(t_list *stack, int value);
+int ft_get_min_stack_index(t_list *stack);
+int ft_get_max_stack_index(t_list *stack);
 int ft_get_index_distance(int size, int index);
 
 typedef struct s_content

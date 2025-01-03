@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-int ft_get_max_index(t_list *stack)
+int ft_get_max_stack_index(t_list *stack)
 {
 	int max_index;
 	int index;

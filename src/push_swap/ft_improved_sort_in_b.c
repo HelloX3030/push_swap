@@ -9,9 +9,9 @@ void ft_improved_sort_in_b(t_push_swap *ps)
 
 	while (ps->size_a > 3)
 	{
-		min_index = ft_get_min_index(ps->a);
+		min_index = ft_get_min_stack_index(ps->a);
 		min_distance = ft_get_index_distance(ps->size_a, min_index);
-		max_index = ft_get_max_index(ps->a);
+		max_index = ft_get_max_stack_index(ps->a);
 		max_distance = ft_get_index_distance(ps->size_a, max_index);
 		if (min_distance < max_distance)
 		{
