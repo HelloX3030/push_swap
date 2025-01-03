@@ -21,8 +21,8 @@ int main(int argc, char **argv)
 		ft_print_error();
 		return (1);
 	}
-	ft_sort(&ps);
-	// ft_debug_sort(&ps, false);
+	// ft_sort(&ps);
+	ft_debug_sort(&ps, false);
 	ft_free_push_swap(&ps);
 	return (0);
 }

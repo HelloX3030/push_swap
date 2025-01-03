@@ -15,5 +15,6 @@
 void ft_sort(t_push_swap *ps)
 {
 	// ft_improved_sort_in_b(ps);
-	ft_sort_in_b(ps);
+	// ft_sort_in_b(ps);
+	ft_3sort(ps);
 }
