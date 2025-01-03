@@ -7,7 +7,7 @@ static int handle_result(t_push_swap *ps, int stack_below_index, int stack_above
 
 	below_distance = ft_get_index_distance(ps->size_a, stack_below_index);
 	above_distance = ft_get_index_distance(ps->size_a, stack_above_index);
-	if (below_distance < above_distance)
+	if ((below_distance < above_distance && !(stack_below_index == -1)) || stack_above_index == -1)
 	{
 		ft_go_to_index(ps, stack_below_index);
 		ft_push_b(ps);
@@ -32,7 +32,7 @@ void ft_improved_sort_in_b(t_push_swap *ps)
 
 	target_below_index = ps->size_a / 2;
 	target_above_index = ps->size_a / 2 + 1;
-	while (ps->size_a > 1)
+	while (ps->size_a > 0)
 	{
 		stack_below_index = ft_get_stack_index(ps->a, target_below_index);
 		stack_above_index = ft_get_stack_index(ps->a, target_above_index);
