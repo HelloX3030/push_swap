@@ -25,7 +25,7 @@ void ft_improved_sort_in_b(t_push_swap *ps)
 			ft_rotate_b(ps);
 		}
 	}
-	ft_bubble_sort(ps);
+	ft_3sort(ps);
 	ft_push_back(ps);
 	ft_move_to_start(ps);
 }

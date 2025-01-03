@@ -21,6 +21,6 @@ void ft_sort_in_b(t_push_swap *ps)
 		ft_go_to_index(ps, min_index);
 		ft_push_b(ps);
 	}
-	ft_bubble_sort(ps);
+	ft_3sort(ps);
 	ft_push_back(ps);
 }

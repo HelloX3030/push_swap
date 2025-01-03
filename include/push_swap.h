@@ -86,6 +86,7 @@ void ft_sort_in_b(t_push_swap *ps);
 void ft_improved_sort_in_b(t_push_swap *ps);
 void ft_custom_sort(t_push_swap *ps);
 void ft_stalin_sort(t_push_swap *ps);
+void ft_3sort(t_push_swap *ps);
 
 // main functions
 void ft_sort(t_push_swap *ps);
