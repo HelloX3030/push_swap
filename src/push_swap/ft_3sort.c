@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_3sort.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/07 15:35:12 by lseeger           #+#    #+#             */
+/*   Updated: 2025/01/07 15:35:13 by lseeger          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-void ft_3sort(t_push_swap *ps)
+void	ft_3sort(t_push_swap *ps)
 {
-	int max_index;
-	int min_index;
+	int	max_index;
+	int	min_index;
 
 	max_index = ft_get_max_stack_index(ps->a);
 	if (max_index == 0)

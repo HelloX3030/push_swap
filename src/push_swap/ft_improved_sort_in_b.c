@@ -1,13 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_improved_sort_in_b.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/07 15:32:38 by lseeger           #+#    #+#             */
+/*   Updated: 2025/01/07 15:32:40 by lseeger          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-static int handle_result(t_push_swap *ps, int stack_below_index, int stack_above_index)
+static int	handle_result(t_push_swap *ps, int stack_below_index,
+		int stack_above_index)
 {
-	int below_distance;
-	int above_distance;
+	int	below_distance;
+	int	above_distance;
 
 	below_distance = ft_get_index_distance(ps->size_a, stack_below_index);
 	above_distance = ft_get_index_distance(ps->size_a, stack_above_index);
-	if ((below_distance < above_distance && !(stack_below_index == -1)) || stack_above_index == -1)
+	if ((below_distance < above_distance && !(stack_below_index == -1))
+		|| stack_above_index == -1)
 	{
 		ft_a_go_to_index(ps, stack_below_index);
 		ft_push_b(ps);
@@ -22,13 +36,13 @@ static int handle_result(t_push_swap *ps, int stack_below_index, int stack_above
 	}
 }
 
-void ft_improved_sort_in_b(t_push_swap *ps)
+void	ft_improved_sort_in_b(t_push_swap *ps)
 {
-	int target_below_index;
-	int target_above_index;
-	int stack_below_index;
-	int stack_above_index;
-	int result;
+	int	target_below_index;
+	int	target_above_index;
+	int	stack_below_index;
+	int	stack_above_index;
+	int	result;
 
 	target_below_index = ps->size_a / 2;
 	target_above_index = ps->size_a / 2 + 1;

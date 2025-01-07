@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_go_to_index.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/07 15:32:58 by lseeger           #+#    #+#             */
+/*   Updated: 2025/01/07 15:33:00 by lseeger          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-void ft_a_go_to_index(t_push_swap *ps, int index)
+void	ft_a_go_to_index(t_push_swap *ps, int index)
 {
 	if (index < ps->size_a / 2)
 	{
@@ -20,7 +32,7 @@ void ft_a_go_to_index(t_push_swap *ps, int index)
 	}
 }
 
-void ft_b_go_to_index(t_push_swap *ps, int index)
+void	ft_b_go_to_index(t_push_swap *ps, int index)
 {
 	if (index < ps->size_b / 2)
 	{

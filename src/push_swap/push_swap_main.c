@@ -6,15 +6,15 @@
 /*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:56:02 by lseeger           #+#    #+#             */
-/*   Updated: 2024/12/19 15:57:39 by lseeger          ###   ########.fr       */
+/*   Updated: 2025/01/07 15:28:13 by lseeger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_push_swap ps;
+	t_push_swap	ps;
 
 	if (!ft_init_push_swap(&ps, argc, argv))
 	{
@@ -22,7 +22,6 @@ int main(int argc, char **argv)
 		return (1);
 	}
 	ft_sort(&ps);
-	// ft_debug_sort(&ps, false);
 	ft_free_push_swap(&ps);
 	return (0);
 }
