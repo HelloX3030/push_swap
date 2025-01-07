@@ -58,9 +58,11 @@ void ft_free_push_swap(t_push_swap *ps);
 void ft_print_push_swap(t_push_swap *ps);
 
 // stack operations
-void ft_go_to_index(t_push_swap *ps, int index);
+void ft_a_go_to_index(t_push_swap *ps, int index);
+void ft_b_go_to_index(t_push_swap *ps, int index);
 void ft_push_back(t_push_swap *ps);
 void ft_move_to_start(t_push_swap *ps);
+void ft_sort_back(t_push_swap *ps);
 
 // swap
 void ft_swap_a(t_push_swap *ps);
@@ -88,6 +90,7 @@ void ft_improved_sort_in_b(t_push_swap *ps);
 void ft_custom_sort(t_push_swap *ps);
 void ft_stalin_sort(t_push_swap *ps);
 void ft_3sort(t_push_swap *ps);
+void ft_proxy_sort_prototype(t_push_swap *ps);
 
 // main functions
 void ft_sort(t_push_swap *ps);

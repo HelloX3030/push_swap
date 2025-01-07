@@ -18,7 +18,7 @@ void ft_sort_in_b(t_push_swap *ps)
 	while (ps->size_a > 0)
 	{
 		min_index = ft_get_min_stack_index(ps->a);
-		ft_go_to_index(ps, min_index);
+		ft_a_go_to_index(ps, min_index);
 		ft_push_b(ps);
 	}
 	ft_push_back(ps);

@@ -9,14 +9,14 @@ static int handle_result(t_push_swap *ps, int stack_below_index, int stack_above
 	above_distance = ft_get_index_distance(ps->size_a, stack_above_index);
 	if ((below_distance < above_distance && !(stack_below_index == -1)) || stack_above_index == -1)
 	{
-		ft_go_to_index(ps, stack_below_index);
+		ft_a_go_to_index(ps, stack_below_index);
 		ft_push_b(ps);
 		ft_rotate_b(ps);
 		return (-1);
 	}
 	else
 	{
-		ft_go_to_index(ps, stack_above_index);
+		ft_a_go_to_index(ps, stack_above_index);
 		ft_push_b(ps);
 		return (1);
 	}
