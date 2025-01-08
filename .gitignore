@@ -7,7 +7,7 @@ obj/
 !/push_swap/
 visualizer
 *.ini
-vscode/
+.vscode/
 /checker
 !/checker/
 # *.md
