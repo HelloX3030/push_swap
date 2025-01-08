@@ -6,7 +6,7 @@
 /*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 15:43:31 by lseeger           #+#    #+#             */
-/*   Updated: 2024/12/19 16:30:51 by lseeger          ###   ########.fr       */
+/*   Updated: 2025/01/08 15:06:31 by lseeger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_custom_sort(t_push_swap *ps)
 	start_i = ft_get_min_diff_index(ps->a, ps->size_a);
 	i = 0;
 	average_diff = ft_get_total_diff(ps->a, i, ps->size_a) / (float)ps->size_a;
-	while (average_diff > 0.5f)
+	while (average_diff > 0)
 	{
 		content_1 = (t_content *)ps->a->content;
 		if (content_1->index > ft_get_relative_index(i, start_i, ps->size_a))

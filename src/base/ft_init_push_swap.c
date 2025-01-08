@@ -6,7 +6,7 @@
 /*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 13:11:25 by lseeger           #+#    #+#             */
-/*   Updated: 2024/12/18 14:43:20 by lseeger          ###   ########.fr       */
+/*   Updated: 2025/01/08 15:01:02 by lseeger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ int	ft_init_push_swap(t_push_swap *ps, int argc, char **argv)
 			return (ft_lstclear(&ps->a, ft_free_content), 0);
 		i++;
 	}
-	ft_init_lst_indexes(ps->a);
+	if (ps->size_a > 0)
+		ft_init_lst_indexes(ps->a);
 	return (1);
 }

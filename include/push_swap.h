@@ -6,7 +6,7 @@
 /*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:47:27 by lseeger           #+#    #+#             */
-/*   Updated: 2025/01/07 15:24:48 by lseeger          ###   ########.fr       */
+/*   Updated: 2025/01/08 14:50:32 by lseeger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,9 +89,14 @@ void		ft_sort_in_b(t_push_swap *ps);
 void		ft_improved_sort_in_b(t_push_swap *ps);
 void		ft_custom_sort(t_push_swap *ps);
 void		ft_stalin_sort(t_push_swap *ps);
-void		ft_3sort(t_push_swap *ps);
 void		ft_proxy_sort_prototype(t_push_swap *ps);
 void		ft_proxy_sort(t_push_swap *ps);
+void		ft_chunk_proxy_sort(t_push_swap *ps, int chunk_size);
+
+// simpel sorts
+void		ft_2sort(t_push_swap *ps);
+void		ft_3sort(t_push_swap *ps);
+void		ft_10sort(t_push_swap *ps);
 
 // main functions
 void		ft_sort(t_push_swap *ps);
