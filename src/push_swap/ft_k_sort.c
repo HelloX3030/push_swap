@@ -1,16 +1,16 @@
 #include "push_swap.h"
 
-static void push_to_b(t_push_swap *ps)
-{
-	bool push_top = ps->size_a % 2;
-	if (push_top)
-		ft_push_b(ps);
-	else
-	{
-		ft_push_b(ps);
-		ft_rotate_b(ps);
-	}
-}
+// static void push_to_b(t_push_swap *ps)
+// {
+// 	bool push_top = ps->size_a % 2;
+// 	if (push_top)
+// 		ft_push_b(ps);
+// 	else
+// 	{
+// 		ft_push_b(ps);
+// 		ft_rotate_b(ps);
+// 	}
+// }
 
 void ft_k_sort(t_push_swap *ps, int chunk_size)
 {
@@ -20,9 +20,15 @@ void ft_k_sort(t_push_swap *ps, int chunk_size)
 	while (ps->size_a > 3)
 	{
 		content = (t_content *)ps->a->content;
-		if (content->index < border + chunk_size)
+		if (content->index <= border)
 		{
-			push_to_b(ps);
+			ft_push_b(ps);
+			ft_rotate_b(ps);
+			border++;
+		}
+		else if (content->index <= border + chunk_size)
+		{
+			ft_push_b(ps);
 			border++;
 		}
 		else
