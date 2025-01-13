@@ -12,10 +12,10 @@
 
 #include "push_swap.h"
 
-void	ft_sort(t_push_swap *ps)
+void ft_sort(t_push_swap *ps)
 {
 	if (ft_is_sorted(ps->a))
-		return ;
+		return;
 	if (ps->size_a == 2)
 		ft_2sort(ps);
 	else if (ps->size_a == 3)
@@ -23,7 +23,7 @@ void	ft_sort(t_push_swap *ps)
 	else if (ps->size_a <= 10)
 		ft_10sort(ps);
 	else if (ps->size_a <= 100)
-		ft_chunk_proxy_sort(ps, 20);
+		ft_k_sort(ps, 10);
 	else
-		ft_chunk_proxy_sort(ps, 50);
+		ft_k_sort(ps, 20);
 }

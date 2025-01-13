@@ -62,6 +62,7 @@ void ft_go_to_indexes(t_push_swap *ps, int a_index, int b_index);
 void ft_push_back(t_push_swap *ps);
 void ft_move_to_start(t_push_swap *ps);
 void ft_sort_back(t_push_swap *ps);
+void ft_improved_sort_back(t_push_swap *ps);
 t_content *ft_get_content(t_list *stack, int i);
 
 // swap
@@ -90,7 +91,7 @@ void ft_improved_sort_in_b(t_push_swap *ps);
 void ft_stalin_sort(t_push_swap *ps);
 void ft_proxy_sort_prototype(t_push_swap *ps);
 void ft_proxy_sort(t_push_swap *ps);
-void ft_chunk_proxy_sort(t_push_swap *ps, int chunk_size);
+void ft_k_sort(t_push_swap *ps, int chunk_size);
 
 // simpel sorts
 void ft_2sort(t_push_swap *ps);
