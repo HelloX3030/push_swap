@@ -83,7 +83,11 @@ void ft_go_to_indexes(t_push_swap *ps, int a_index, int b_index)
 	int rr_r_operations = ps->size_a - a_index + b_index;
 	int rr_operations = ft_max(ps->size_a - a_index, ps->size_b - b_index);
 
-	if (ft_value_is_smallest(r_operations, r_rr_operations, rr_r_operations, rr_operations))
+	if (a_index <= 0)
+		ft_b_go_to_index(ps, b_index);
+	else if (b_index <= 0)
+		ft_a_go_to_index(ps, a_index);
+	else if (ft_value_is_smallest(r_operations, r_rr_operations, rr_r_operations, rr_operations))
 		run_r(ps, a_index, b_index);
 	else if (ft_value_is_smallest(r_rr_operations, r_operations, rr_r_operations, rr_operations))
 		run_r_rr(ps, a_index, b_index);
