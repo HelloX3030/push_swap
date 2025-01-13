@@ -10,8 +10,11 @@ visualizer
 .vscode/
 /checker
 !/checker/
+/tester
+checker_Mac
 # *.md
 /push_swap_visualizer
+push_swap_test.sh
 
 # Prerequisites
 *.d
