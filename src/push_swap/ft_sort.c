@@ -22,8 +22,8 @@ void ft_sort(t_push_swap *ps)
 		ft_3sort(ps);
 	else if (ps->size_a <= 10)
 		ft_10sort(ps);
-	else if (ps->size_a <= 100)
-		ft_k_sort(ps, 20);
+	else if (ps->size_a <= 150)
+		ft_k_sort(ps, 14);
 	else
 		ft_k_sort(ps, 30);
 }
