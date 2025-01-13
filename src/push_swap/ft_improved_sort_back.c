@@ -33,6 +33,9 @@ void ft_improved_sort_back(t_push_swap *ps)
 		max_node_b_index = ft_get_max_stack_index(ps->b);
 		content = ft_get_content(ps->b, max_node_b_index);
 		colsest_a_index = get_closest_index(ps->a, content->index, max_i);
+		// ft_printf("-------\n");
+		// ft_printf("closest_a_index: %d\n", colsest_a_index);
+		// ft_printf("max_node_b_index: %d\n", max_node_b_index);
 		ft_go_to_indexes(ps, colsest_a_index, max_node_b_index);
 		ft_push_a(ps);
 	}

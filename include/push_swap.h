@@ -17,7 +17,7 @@
 #include "../libft/libft/libft.h"
 #include "../libft/printf/include/ft_printf.h"
 
-#define PRINT_COMMANDS 1
+#define PRINT_COMMANDS 0
 
 // helper functions
 void ft_free_content(void *content);

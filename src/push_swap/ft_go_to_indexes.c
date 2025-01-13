@@ -2,6 +2,7 @@
 
 static void run_r(t_push_swap *ps, int a_index, int b_index)
 {
+	ft_printf("run_r\n");
 	int rotate_both = ft_min(a_index, b_index);
 	a_index -= rotate_both;
 	b_index -= rotate_both;
@@ -25,6 +26,7 @@ static void run_r(t_push_swap *ps, int a_index, int b_index)
 
 static void run_r_rr(t_push_swap *ps, int a_index, int b_index)
 {
+	ft_printf("run_r_rr\n");
 	int b_rotations = ps->size_b - b_index;
 	while (a_index)
 	{
@@ -40,6 +42,7 @@ static void run_r_rr(t_push_swap *ps, int a_index, int b_index)
 
 static void run_rr_r(t_push_swap *ps, int a_index, int b_index)
 {
+	ft_printf("run_rr_r\n");
 	int a_rotations = ps->size_a - a_index;
 	while (a_rotations)
 	{
@@ -55,10 +58,19 @@ static void run_rr_r(t_push_swap *ps, int a_index, int b_index)
 
 static void run_rr(t_push_swap *ps, int a_index, int b_index)
 {
+	ft_printf("run_rr\n");
 	int rotate_both = ft_min(ps->size_a - a_index, ps->size_b - b_index);
 	int rotate_a = ps->size_a - a_index - rotate_both;
 	int rotate_b = ps->size_b - b_index - rotate_both;
 
+	ft_printf("------\n");
+	ft_printf("a_size: %d\n", ps->size_a);
+	ft_printf("b_size: %d\n", ps->size_b);
+	ft_printf("a_index: %d\n", a_index);
+	ft_printf("b_index: %d\n", b_index);
+	ft_printf("rotate_both: %d\n", rotate_both);
+	ft_printf("rotate_a: %d\n", rotate_a);
+	ft_printf("rotate_b: %d\n", rotate_b);
 	while (rotate_both > 0)
 	{
 		ft_reverse_rotate_rr(ps);

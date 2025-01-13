@@ -46,6 +46,7 @@ void ft_b_go_to_index(t_push_swap *ps, int index)
 	{
 		while (index < ps->size_b)
 		{
+			// ft_printf("Gooooo\n");
 			ft_reverse_rotate_b(ps);
 			index++;
 		}
