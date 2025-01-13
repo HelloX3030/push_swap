@@ -1,22 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_k_sort.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lseeger <lseeger@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/13 15:32:26 by lseeger           #+#    #+#             */
+/*   Updated: 2025/01/13 15:32:38 by lseeger          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-// static void push_to_b(t_push_swap *ps)
-// {
-// 	bool push_top = ps->size_a % 2;
-// 	if (push_top)
-// 		ft_push_b(ps);
-// 	else
-// 	{
-// 		ft_push_b(ps);
-// 		ft_rotate_b(ps);
-// 	}
-// }
-
-void ft_k_sort(t_push_swap *ps, int chunk_size)
+void	ft_k_sort(t_push_swap *ps, int chunk_size)
 {
-	int border = 0;
-	t_content *content;
+	int			border;
+	t_content	*content;
 
+	border = 0;
 	while (ps->size_a > 3)
 	{
 		content = (t_content *)ps->a->content;
